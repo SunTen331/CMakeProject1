@@ -1,4 +1,5 @@
 #include "fullName.h"
+#include "log.h"
 #include "people.h"
 
 using namespace std;
@@ -17,6 +18,8 @@ int main()
 
     People p1(fullName);
     p1.printInfo();
+
+    log_data("Thank you ", LogType::MESSAGE);
 
     return 0;
 }
