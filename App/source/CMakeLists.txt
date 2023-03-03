@@ -9,9 +9,13 @@ project(AppForName
         DESCRIPTION "First try with cmake"
         LANGUAGES CXX)
 
-# Static Library
-add_library(logger STATIC src/log.cpp)
+# Shared Library
+add_library(logger SHARED src/log.cpp)
 target_include_directories(logger PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+# Static Library
+add_library(lister STATIC src/list.cpp)
+target_include_directories(lister PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # Execute File
 add_executable(AppForNameBinary 
@@ -20,4 +24,4 @@ add_executable(AppForNameBinary
         src/people.cpp
         )
 target_include_directories(AppForNameBinary PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(AppForNameBinary PUBLIC logger)
+target_link_libraries(AppForNameBinary PUBLIC logger lister)
