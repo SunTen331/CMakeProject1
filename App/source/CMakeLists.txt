@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 
 set(CXX_STANDARD_REQUIRED ON) # Make C++ version a hard requirement
 set(CMAKE_CXX_STANDARD 17) # Default C++ standard for targets
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ADDITIONAL_CFLAGS} -g")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ADDITIONAL_CFLAGS} -g") # Enable Debug
 
 # Project
 project(AppForName
